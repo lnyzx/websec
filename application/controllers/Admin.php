@@ -12,5 +12,12 @@ class Admin extends CI_Controller{
         $this -> load -> view('templates/header');
         $this -> load -> view('pages/admin');
         $this -> load -> view('templates/footer');
+
     }
+
+    public function show_articles(){
+        pass;
+    }
+
+
 }
