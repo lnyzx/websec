@@ -11,6 +11,8 @@ class Login extends CI_Controller{
     {
         parent::__construct();
         $this -> load -> model('login_model');
+        $this -> load -> library('session');
+        $this -> load -> helper('url');
     }
 
     public function index(){
@@ -24,7 +26,8 @@ class Login extends CI_Controller{
         $username = $this -> input -> post('username');
         $password = $this -> input -> post('password');
         if($this -> login_model -> check_pass($username, $password)){
-            echo 'hello world';
+            $_SESSION['admin'] = 'yes';
+            redirect('/admin');
         }
         else{
             $this -> wrong_pass();
