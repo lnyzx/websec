@@ -30,6 +30,7 @@ class Login extends CI_Controller{
             redirect('/admin');
         }
         else{
+            $_SESSION['admin'] = 'no';
             $this -> wrong_pass();
         }
     }
