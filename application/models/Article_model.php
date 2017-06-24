@@ -14,7 +14,7 @@ class Article_model extends CI_Model{
     }
 
     public function get_articles(){
-        $query = $this -> db -> query('SELECT * FROM articles');
-        return $query;
+        $query = $this -> db -> get('articles');
+        $row = $query -> result;
     }
 }
