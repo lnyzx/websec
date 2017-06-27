@@ -13,6 +13,7 @@ class Admin extends CI_Controller{
         parent::__construct();
         $this -> load -> library('session');
         $this -> load -> model('login_model');
+        $this -> load -> model('article_model');
     }
 
     public function index(){
@@ -24,8 +25,14 @@ class Admin extends CI_Controller{
     }
 
     public function show_articles(){
-        pass;
+        $row  = $this -> article_model -> get_articles();
+        $this -> output
+            -> set_content_type('application/json')
+            -> set_output(json_encode($row));
     }
 
-
+    public function add_article(){
+        $title = $this -> input -> post('title');
+        $url = $this -> input -> post('url');
+    }
 }

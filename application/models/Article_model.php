@@ -15,6 +15,10 @@ class Article_model extends CI_Model{
 
     public function get_articles(){
         $query = $this -> db -> get('articles');
-        $row = $query -> result;
+        return $query -> result();
+    }
+
+    public function add_article($title, $url, $introduction, $category){
+        $query = $this -> db;
     }
 }
