@@ -20,7 +20,9 @@ class Admin extends CI_Controller{
         $this -> load -> view('templates/header');
         $this -> load -> view('pages/admin');
         $this -> load -> view('templates/footer');
-        $this -> login_model -> is_login();
+        if(!$this -> login_model -> is_login()){
+            redirect('/login');
+        };
 
     }
 
@@ -32,7 +34,10 @@ class Admin extends CI_Controller{
     }
 
     public function add_article(){
-        $title = $this -> input -> post('title');
-        $url = $this -> input -> post('url');
+        $data = file_get_contents("php://input");
+        echo $data;
+//        foreach ($data as $key => $value){
+//            echo '1';
+//        };
     }
 }

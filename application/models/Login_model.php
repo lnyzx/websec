@@ -29,8 +29,11 @@ class Login_model extends CI_Model{
     }
 
     public function is_login(){
-        if($_SESSION['admin'] != 'yes'){
-            redirect('/login');
+        if($_SESSION['admin'] === 'yes'){
+            return 1;
+        }
+        else{
+            return 0;
         }
     }
 }
