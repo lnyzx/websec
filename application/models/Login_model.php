@@ -29,7 +29,7 @@ class Login_model extends CI_Model{
     }
 
     public function is_login(){
-        if($_SESSION['admin'] === 'yes'){
+        if ($this -> session -> userdata('admin') === 'yes'){
             return 1;
         }
         else{

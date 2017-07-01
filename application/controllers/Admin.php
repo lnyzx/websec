@@ -34,10 +34,7 @@ class Admin extends CI_Controller{
     }
 
     public function add_article(){
-        $data = file_get_contents("php://input");
-        echo $data;
-//        foreach ($data as $key => $value){
-//            echo '1';
-//        };
+        $data = $_POST;
+        $this -> article_model -> add_article($data);
     }
 }

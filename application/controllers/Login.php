@@ -30,11 +30,11 @@ class Login extends CI_Controller{
         $username = $this -> input -> post('username');
         $password = $this -> input -> post('password');
         if($this -> login_model -> check_pass($username, $password)){
-            $_SESSION['admin'] = 'yes';
+            $this -> session -> set_userdata('admin', 'yes');
             redirect('/admin');
         }
         else{
-            $_SESSION['admin'] = 'no';
+            $this -> session -> set_userdata('admin', 'no');
             $this -> wrong_pass();
         }
     }

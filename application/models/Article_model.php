@@ -18,7 +18,7 @@ class Article_model extends CI_Model{
         return $query -> result();
     }
 
-    public function add_article($title, $url, $introduction, $category){
-        $query = $this -> db;
+    public function add_article($post){
+        $query = $this -> db -> insert('articles', $post);
     }
 }
