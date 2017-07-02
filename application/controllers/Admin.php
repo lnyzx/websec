@@ -29,12 +29,24 @@ class Admin extends CI_Controller{
     public function show_articles(){
         $row  = $this -> article_model -> get_articles();
         $this -> output
-            -> set_content_type('application/json')
-            -> set_output(json_encode($row));
+            -> set_content_type('application/json', 'utf-8')
+            -> set_output(json_encode($row, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
     }
 
     public function add_article(){
         $data = $_POST;
+        if ($data['new_category'] != ''){
+            $data['category'] = $data['new_category'];
+            unset($data['new_category']);
+        }
         $this -> article_model -> add_article($data);
+        redirect('/admin');
+    }
+
+    public function show_category(){
+        $row = $this -> article_model -> get_category();
+        $this -> output
+            -> set_content_type('application/json', 'utf-8')
+            -> set_output(json_encode($row, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
     }
 }

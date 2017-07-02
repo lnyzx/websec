@@ -25,14 +25,11 @@
     <div class="form-group">
         <label for="category" class="col-sm-5 control-label"></label>
         <div class="col-sm-1">
-            <select name="category" id="category" class="form-control">
-                <option>xss</option>
-                <option>注入</option>
-                <option>命令执行</option>
-            </select>
+            <script type="text/javascript" src="js/load_category.js"></script>
+            <select name="category" id="category" class="form-control"></select>
         </div>
         <div class="col-sm-2">
-            <input type='text' name='category' class='form-control' id='category' placeholder="新建类型">
+            <input type='text' name='new_category' class='form-control' id='new_category' placeholder="新建一个类型">
         </div>
     </div>
 <!--提交按钮-->

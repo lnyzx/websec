@@ -21,4 +21,9 @@ class Article_model extends CI_Model{
     public function add_article($post){
         $query = $this -> db -> insert('articles', $post);
     }
+
+    public function get_category(){
+        $query = $this -> db -> query('SELECT DISTINCT category FROM articles;');
+        return $query -> result();
+    }
 }
