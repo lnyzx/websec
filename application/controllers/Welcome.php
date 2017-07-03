@@ -8,5 +8,6 @@ class Welcome extends CI_Controller {
 	    $this -> load -> view('templates/header');
 		$this->load->view('pages/welcome');
 		$this -> load -> view('templates/footer');
+		$this -> load -> model('article_model');
 	}
 }
