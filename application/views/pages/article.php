@@ -1,7 +1,7 @@
 <script type="text/javascript" src="js/load_article.js"></script>
 <script type="text/javascript" src="js/load_pages.js"></script>
 <table class="table table-striped" id="articles">
-    <caption>websec</caption>
+    <caption>SELECT `Au1ge` FROM `your_heart`</caption>
     <thead>
     <tr>
         <th>时间</th>

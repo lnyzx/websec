@@ -23,7 +23,7 @@ class Articles extends CI_Controller {
     }
 
     public function show_articles($page){
-        $num = $page * 10;
+        $num = $page * 15;
         $row  = $this -> article_model -> get_articles($num);
         $this -> output
             -> set_content_type('application/json', 'utf-8')
@@ -44,7 +44,7 @@ class Articles extends CI_Controller {
 
     public function get_pages(){
         $num = $this -> article_model -> get_nums();
-        $row = intval($num / 10) + 1;
+        $row = intval($num / 15) + 1;
         $this -> output
             -> set_content_type('application/json', 'utf-8')
             -> set_output(json_encode($row, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
