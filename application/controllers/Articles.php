@@ -56,4 +56,10 @@ class Articles extends CI_Controller {
         $this->load->view('pages/article');
         $this -> load -> view('templates/footer');
     }
+
+    public function search($key){
+        $this -> load -> view('templates/header');
+        $this->load->view('pages/search');
+        $this -> load -> view('templates/footer');
+    }
 }
