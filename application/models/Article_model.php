@@ -13,7 +13,9 @@ class Article_model extends CI_Model{
         $this -> load -> database();
     }
 
-    public function get_articles(){
+    public function get_articles($num){
+        $this -> db -> order_by('id', 'DESC');
+        $this -> db -> limit($num + 10, $num);
         $query = $this -> db -> get('articles');
         return $query -> result();
     }
@@ -25,5 +27,15 @@ class Article_model extends CI_Model{
     public function get_category(){
         $query = $this -> db -> query('SELECT DISTINCT category FROM articles;');
         return $query -> result();
+    }
+
+    public function all_articles()
+    {
+        $query = $this -> db -> get('articles');
+        return $query -> result();
+    }
+
+    public function get_nums(){
+        return $this -> db -> count_all_results('articles');
     }
 }
