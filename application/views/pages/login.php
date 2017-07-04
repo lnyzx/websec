@@ -17,9 +17,9 @@
         </div>
     </div>
 <!--    测试用，管理员登录-->
-    <div class="form-group">
-        <div class="col-sm-offset-5 col-sm-2">
-            <a href="index.php?/login/test_login" class="btn btn-info btn-sm btn-block">test</a>
-        </div>
-    </div>
-</form>
+<!--    <div class="form-group">-->
+<!--        <div class="col-sm-offset-5 col-sm-2">-->
+<!--            <a href="index.php?/login/test_login" class="btn btn-info btn-sm btn-block">test</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</form>-->

@@ -43,8 +43,8 @@ class Login extends CI_Controller{
         die('wrong password');
     }
 
-    public function test_login(){
-        $this -> session -> set_userdata('admin', 'yes');
-        redirect('/admin');
-    }
+//    public function test_login(){
+//        $this -> session -> set_userdata('admin', 'yes');
+//        redirect('/admin');
+//    }
 }
