@@ -15,7 +15,7 @@ class Article_model extends CI_Model{
 
     public function get_articles($num){
         $this -> db -> order_by('id', 'DESC');
-        $this -> db -> limit($num + 15, $num);
+        $this -> db -> limit(15, $num);
         $query = $this -> db -> get('articles');
         return $query -> result();
     }
