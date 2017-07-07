@@ -40,15 +40,13 @@ class Article_model extends CI_Model{
     }
 
     public function get_search($key, $num){
-//        $this -> db -> order_by('id', 'DESC');
-//        $this -> db -> or_like('title', $key);
-//        $this -> db -> or_like('introduction', $key);
-//        $this -> db -> where('category', $key);
-//        $this -> db -> or_like('url', $key);
-//        $this -> db -> limit(15, $num);
-//        $query = $this -> db -> get('articles');
-        $key = '注入';
-        $query = $this -> db -> query("select * from articles where category like '%{$key}%' or url like '%{$key}%' or introduction like '%{$key}%' or title like '%{$key}%' order by id DESC;");
+        $this -> db -> order_by('id', 'DESC');
+        $this -> db -> or_like('title', $key);
+        $this -> db -> or_like('introduction', $key);
+        $this -> db -> or_like('category', $key);
+        $this -> db -> or_like('url', $key);
+        $this -> db -> limit(15, $num);
+        $query = $this -> db -> get('articles');
         return $query -> result();
     }
 

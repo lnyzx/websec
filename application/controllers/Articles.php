@@ -51,22 +51,25 @@ class Articles extends CI_Controller {
         $this->load->view('pages/article');
         $this -> load -> view('templates/footer');
     }
-
+//显示页面
     public function search($key){
         $this -> load -> view('templates/header');
         $this->load->view('pages/search');
         $this -> load -> view('templates/footer');
     }
-
-    public function get_search($key, $page = 0){
+//查询接口
+    public function get_search(){
+        $key = $this -> input -> post('key');
+        $page = $this -> input -> post('page');
         $page = $page * 15;
         $row = $this -> article_model -> get_search($key, $page);
         $this -> output
             -> set_content_type('application/json', 'utf-8')
             -> set_output(json_encode($row, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
     }
-
-    public function search_page($key){
+//搜索页面数量接口
+    public function search_page(){
+        $key = $this -> input -> post('key');
         $num = $this -> article_model -> search_page($key);
         $row = intval($num / 15) + 1;
         $this -> output

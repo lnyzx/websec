@@ -10,6 +10,7 @@
     <script type="text/javascript" src="js/load_category4menu.js"></script>
 
     <script src="js/jquery.twbsPagination.min.js"></script>
+    <script src="js/search_form.js"></script>
 
 
 </head>
@@ -34,12 +35,10 @@
             </ul>
         </div>
         <div>
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" action="#" id="search" name="search">
-                </div>
-                <button type="button" onclick="javascript:window.location.href='index.php?/articles/search/' + document.getElementById('search').value" class="btn btn-default">搜索</button>
-            </form>
+            <div class="navbar-form navbar-left" role="search">
+                    <input type="text" class="form-control" placeholder="Search" id="search">
+                    <button type="button" id="search_button" class="btn btn-default">搜索</button>
+            </div>
         </div>
 
     </div>

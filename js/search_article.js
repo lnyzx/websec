@@ -2,13 +2,13 @@ $(document).ready(function(){
 
     function geturlkey() {
         var url = window.location.href;
-        var key = url.split('/')[url.split('/').length -1];
+        var key = decodeURIComponent(url.split('/')[url.split('/').length -1]);
         return key;
     }
 
     function load_article(key, page) {
-        $.getJSON("index.php?/articles/get_search/" + key + '/' + page, function(result){
-            $('tbody tr').remove();
+        $('tbody tr').remove();
+        $.post("index.php?/articles/get_search/", {key: key, page: page}, function(result){
             $.each(result, function(num, value){
                 var tr = $('<tr></tr>');
                 var time = $('<th></th>').text(value.time);
@@ -22,19 +22,19 @@ $(document).ready(function(){
                 $(tr).append(category);
                 $("tbody#articles_tbody").append(tr);
             });
-        });
+        }, 'json');
     }
 
-    $.getJSON("index.php?/articles/search_page/" + geturlkey(), function(result){
+    $.post("index.php?/articles/search_page/", {key: geturlkey()}, function(result){
 
         $('ul#page').twbsPagination({
             totalPages: result,
             visiblePages: 5,
             onPageClick: function (event, page) {
                 $('tbody tr').remove();
-                load_article(geturlkey(), page-1);
+                load_article(geturlkey(), page - 1);
             }
         });
 
-    });
+    }, 'json');
 });
