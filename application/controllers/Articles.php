@@ -57,9 +57,25 @@ class Articles extends CI_Controller {
         $this -> load -> view('templates/footer');
     }
 
-    public function search($key){
+    public function search($key, $page = 0){
         $this -> load -> view('templates/header');
         $this->load->view('pages/search');
         $this -> load -> view('templates/footer');
+    }
+
+    public function get_search($key, $page = 0){
+        $page = $page * 15;
+        $row = $this -> article_model -> get_search($key, $page);
+        $this -> output
+            -> set_content_type('application/json', 'utf-8')
+            -> set_output(json_encode($row, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+    }
+
+    public function search_page($key){
+        $num = $this -> article_model -> search_page($key);
+        $row = intval($num / 15) + 1;
+        $this -> output
+            -> set_content_type('application/json', 'utf-8')
+            -> set_output(json_encode($row, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
     }
 }
