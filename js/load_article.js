@@ -5,6 +5,7 @@ $(document).ready(function(){
 
     function load_article(page){
         $.getJSON("index.php?/articles/show_articles/" + page, function(result){
+            $('tbody tr').remove();
             $.each(result, function(num, value){
                 var tr = $('<tr></tr>');
                 var time = $('<th></th>').text(value.time);
@@ -27,7 +28,6 @@ $(document).ready(function(){
             totalPages: result,
             visiblePages: 5,
             onPageClick: function (event, page) {
-                $('tbody tr').remove();
                 load_article(page-1);
                 window.location.hash = page;
             }

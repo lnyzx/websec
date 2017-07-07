@@ -7,8 +7,8 @@ $(document).ready(function(){
     }
 
     function load_article(key, page) {
-        $('tbody tr').remove();
         $.getJSON("index.php?/articles/get_search/" + key + '/' + page, function(result){
+            $('tbody tr').remove();
             $.each(result, function(num, value){
                 var tr = $('<tr></tr>');
                 var time = $('<th></th>').text(value.time);
