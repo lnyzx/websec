@@ -37,11 +37,6 @@ class Articles extends CI_Controller {
             -> set_output(json_encode($row, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
     }
 
-    public function category_articles($category)
-    {
-//        todo
-    }
-
     public function get_pages(){
         $num = $this -> article_model -> get_nums();
         $row = intval($num / 15) + 1;
@@ -51,13 +46,13 @@ class Articles extends CI_Controller {
 
     }
 
-    public function page($page){
+    public function page(){
         $this -> load -> view('templates/header');
         $this->load->view('pages/article');
         $this -> load -> view('templates/footer');
     }
 
-    public function search($key, $page = 0){
+    public function search($key){
         $this -> load -> view('templates/header');
         $this->load->view('pages/search');
         $this -> load -> view('templates/footer');

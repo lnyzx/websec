@@ -9,6 +9,8 @@
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/load_category4menu.js"></script>
 
+    <script src="js/jquery.twbsPagination.min.js"></script>
+
 
 </head>
 

@@ -14,5 +14,5 @@
     </tbody>
 </table>
 
-<ul class="nav nav-pills" id="page">
+<ul class="pagination" id="page">
 </ul>
