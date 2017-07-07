@@ -1,5 +1,4 @@
 <script type="text/javascript" src="js/search_article.js"></script>
-<!--<script type="text/javascript" src="js/search_page.js"></script>-->
 <table class="table table-striped" id="articles">
     <caption>SELECT `Au1ge` FROM `your_heart`</caption>
     <thead>

@@ -1,15 +1,5 @@
 $(document).ready(function(){
-    // function geturlpage(){
-    //     var url = window.location.href;
-    //     var param = url.split('/')[url.split('/').length -1];
-    //     if(param && param.match(/^\d*$/i)){
-    //         return param - 1;
-    //     }
-    //     else {
-    //         return 0;
-    //     }
-    // }
-    //
+
     function geturlkey() {
         var url = window.location.href;
         var key = url.split('/')[url.split('/').length -1];
