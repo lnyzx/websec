@@ -7,8 +7,8 @@ $(document).ready(function(){
     }
 
     function load_article(key, page) {
-        $('tbody tr').remove();
         $.post("index.php?/articles/get_search/", {key: key, page: page}, function(result){
+            $('tbody tr').remove();
             $.each(result, function(num, value){
                 var tr = $('<tr></tr>');
                 var time = $('<th></th>').text(value.time);
@@ -31,7 +31,6 @@ $(document).ready(function(){
             totalPages: result,
             visiblePages: 5,
             onPageClick: function (event, page) {
-                $('tbody tr').remove();
                 load_article(geturlkey(), page - 1);
             }
         });
