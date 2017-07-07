@@ -38,7 +38,7 @@
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search" action="#" id="search" name="search">
                 </div>
-                <button type="button" onclick="javascript:window.location.href='index.php?/articles/search/' + document.getElementById('search').value + '/1'" class="btn btn-default">搜索</button>
+                <button type="button" onclick="javascript:window.location.href='index.php?/articles/search/' + document.getElementById('search').value" class="btn btn-default">搜索</button>
             </form>
         </div>
 
