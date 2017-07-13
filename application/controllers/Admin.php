@@ -27,6 +27,9 @@ class Admin extends CI_Controller{
     }
 
     public function add_article(){
+        if ($this -> session -> userdata('admin') !== 'yes'){
+            redirect('/login');
+        }
         $data = $_POST;
         $today = date("Y-m-d");
         $data['time'] = $today;
