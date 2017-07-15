@@ -22,7 +22,7 @@
         <div>
             <ul class="nav navbar-nav">
                 <li><a href="#">Web-Sec-Au1ge</a></li>
-                <li><a href="index.php">主页</a></li>
+                <li><a href="http://www.au1ge.xyz">博客</a></li>
                 <li><a href="index.php?/login">登录</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
