@@ -29,7 +29,7 @@ $(document).ready(function(){
 
         $('ul#page').twbsPagination({
             totalPages: result,
-            visiblePages: 5,
+            visiblePages: 7,
             onPageClick: function (event, page) {
                 load_article(geturlkey(), page - 1);
             }
