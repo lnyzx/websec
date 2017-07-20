@@ -11,6 +11,7 @@
 
     <script src="js/jquery.twbsPagination.min.js"></script>
     <script src="js/search_form.js"></script>
+    <link href="css/login.css" rel="stylesheet" style="text/css"/>
 
 
 </head>
