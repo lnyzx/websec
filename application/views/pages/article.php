@@ -1,6 +1,6 @@
 <script type="text/javascript" src="js/load_article.js"></script>
 <table class="table table-striped" id="articles">
-    <caption>For you, a thousand times over</caption>
+    <caption class="motto">For you, a thousand times over</caption>
     <thead>
     <tr>
         <th>时间</th>
