@@ -37,6 +37,7 @@
     <div class='form-group'>
         <div class="col-sm-offset-5 col-sm-3">
             <button type="submit" class="btn btn-info btn-sm btn-block">提交</button>
+            <button type="submit" class="btn btn-info btn-sm btn-block">更新</button>
         </div>
     </div>
 
