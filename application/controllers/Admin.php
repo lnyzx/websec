@@ -47,6 +47,10 @@ class Admin extends CI_Controller{
         redirect('/admin');
     }
 
+    public function update_article(){
+        $data = $_POST;
+    }
+
     public function show_category(){
         $row = $this -> article_model -> get_category();
         $this -> output
