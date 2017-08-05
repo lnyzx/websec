@@ -33,7 +33,7 @@ class Admin extends CI_Controller{
         $data = $_POST;
         $today = date("Y-m-d");
         $data['time'] = $today;
-        if ($data === ''){
+        if ($data['title'] === '' && $data['url'] === ''){
             redirect('/admin');
         }
         if ($data['new_category'] != ''){
