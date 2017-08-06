@@ -57,4 +57,8 @@ class Article_model extends CI_Model{
         $this -> db -> or_like('url', $key);
         return $this -> db -> count_all_results('articles');
     }
+
+    public function update_article($data){
+        
+    }
 }
