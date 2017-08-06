@@ -48,7 +48,24 @@ class Admin extends CI_Controller{
     }
 
     public function update_article(){
+        if ($this -> session -> userdata('admin') !== 'yes'){
+            redirect('/login');
+        }
         $data = $_POST;
+        $today = date("Y-m-d");
+        $data['time'] = $today;
+        if ($data['title'] === '' && $data['url'] === ''){
+            redirect('/admin');
+        }
+        if ($data['new_category'] != ''){
+            $data['category'] = $data['new_category'];
+            unset($data['new_category']);
+        }
+        else{
+            unset($data['new_category']);
+        }
+        $this -> article_model -> update_article($data);
+        redirect('/admin');
     }
 
     public function show_category(){
