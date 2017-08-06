@@ -1,3 +1,4 @@
+<script src="js/update.js"></script>
 <h2>hello my admin <small>hello world</small></h2>
 <form method="post" action='index.php?/admin/add_article' class='form-horizontal' role="form">
 <!--文章标题表单-->
@@ -37,7 +38,7 @@
     <div class='form-group'>
         <div class="col-sm-offset-5 col-sm-3">
             <button type="submit" class="btn btn-info btn-sm btn-block">提交</button>
-            <button type="submit" class="btn btn-info btn-sm btn-block">更新</button>
+            <button id="update_button" class="btn btn-info btn-sm btn-block">更新</button>
         </div>
     </div>
 
