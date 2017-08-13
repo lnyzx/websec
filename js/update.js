@@ -17,9 +17,14 @@ $(document).ready(function(){
 
         post_data = {
             title: title,
-            url: url,
-            introduction: introduction,
             category: category,
+        }
+
+        if(url != ''){
+            post_data['url'] = url;
+        }
+        if(introduction != ''){
+            post_data['introduction'] = introduction;
         }
 
         $.post('index.php?/admin/update_article', post_data, function(result){
