@@ -1,11 +1,11 @@
 <script src="js/update.js"></script>
-<h2>hello my admin <small>hello world</small></h2>
 <div id="admin_form">
     <form method="post" action='index.php?/admin/add_article' class='form-horizontal' role="form">
     <!--文章标题表单-->
         <div class='form-group'>
             <label for="title" class="col-sm-5 control-label"></label>
             <div class='col-sm-3'>
+                <h3 id="loginh4">HELLO <small>ADMIN</small></h3>
                 <input type='text' name='title' class='form-control' id='title' placeholder="文章标题">
             </div>
         </div>
@@ -37,14 +37,15 @@
         </div>
     <!--提交按钮-->
         <div class='form-group'>
-            <div class="col-sm-offset-5 col-sm-3">
-                <button type="submit" class="btn btn-info btn-sm btn-block">提交</button>
+            <label class="col-sm-5 control-label"></label>
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-info btn-sm btn-block">添加</button>
+            </div>
+            <div class="col-sm-1">
+                <input type="button" id="update_button" class="btn btn-info btn-sm btn-block" value="更新"/>
             </div>
         </div>
     </form>
-    <div class="col-sm-offset-5 col-sm-3 ">
-        <button id="update_button" class="btn btn-info btn-sm btn-block">更新</button>
-    </div>
 </div>
 <?php
 ?>
