@@ -57,13 +57,6 @@ class Admin extends CI_Controller{
         if ($data['title'] === '' && $data['url'] === ''){
             redirect('/admin');
         }
-        if ($data['new_category'] != ''){
-            $data['category'] = $data['new_category'];
-            unset($data['new_category']);
-        }
-        else{
-            unset($data['new_category']);
-        }
         $this -> article_model -> update_article($data);
         redirect('/admin');
     }
