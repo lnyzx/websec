@@ -8,7 +8,7 @@ $(document).ready(function(){
         var title = $('#title').val();
         var url = $('#url').val();
         var introduction = $('#introduction').val();
-        var category = $('#category').val();
+        var category = $('select#category').val();
         var new_category = $('#new_category').val();
 
         if (new_category != '') {
@@ -21,8 +21,6 @@ $(document).ready(function(){
             introduction: introduction,
             category: category,
         }
-
-        alert(post_data['category']);
 
         $.post('index.php?/admin/update_article', post_data, function(result){
             alert('update done');

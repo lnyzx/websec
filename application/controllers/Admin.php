@@ -58,7 +58,6 @@ class Admin extends CI_Controller{
             redirect('/admin');
         }
         $this -> article_model -> update_article($data);
-        redirect('/admin');
     }
 
     public function show_category(){

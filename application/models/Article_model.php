@@ -59,7 +59,7 @@ class Article_model extends CI_Model{
     }
 
     public function update_article($data){
-        $this -> db -> where('title', data['title']);
+        $this -> db -> where('title', $data['title']);
         $this -> db -> update('articles', $data);
     }
 }
