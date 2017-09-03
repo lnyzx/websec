@@ -11,7 +11,7 @@
 
     <script src="js/jquery.twbsPagination.min.js"></script>
     <script src="js/search_form.js"></script>
-    <link href="css/login.css" rel="stylesheet" style="text/css"/>
+    <link href="css/all.css" rel="stylesheet" style="text/css"/>
 
 
 </head>
@@ -22,7 +22,7 @@
     <div class="container-fluid">
         <div>
             <ul class="nav navbar-nav">
-                <li><a href="index.php">Web-Sec</a></li>
+                <li><a href="index.php">Web-Security</a></li>
                 <li><a href="index.php">主页</a></li>
                 <li><a href="http://www.au1ge.xyz">博客</a></li>
                 <li><a href="index.php?/login">登录</a></li>

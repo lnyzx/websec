@@ -17,3 +17,20 @@
 #admin_form{
     margin-top:80px;
 }
+
+/*表格宽度*/
+.th-time{
+    width: 8%;
+}
+
+.th-title{
+    width: 30%;
+}
+
+/*.th-intro{*/
+    /*width: 50%;*/
+/*}*/
+
+.th-cate{
+    width: 7%;
+}

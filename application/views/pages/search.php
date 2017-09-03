@@ -1,6 +1,6 @@
 <script type="text/javascript" src="js/search_article.js"></script>
 <table class="table table-striped" id="articles">
-    <caption>SELECT `Au1ge` FROM `your_heart`</caption>
+    <caption class="moto">.(500) DAYS OF SUMMER</caption>
     <thead>
     <tr>
         <th>时间</th>
