@@ -22,7 +22,7 @@
     <div class="container-fluid">
         <div>
             <ul class="nav navbar-nav">
-                <li><a href="index.php">Web-Sec-Au1ge</a></li>
+                <li><a href="index.php">Web-Sec</a></li>
                 <li><a href="index.php">主页</a></li>
                 <li><a href="http://www.au1ge.xyz">博客</a></li>
                 <li><a href="index.php?/login">登录</a></li>
