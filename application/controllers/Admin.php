@@ -22,6 +22,7 @@ class Admin extends CI_Controller{
         $this -> load -> view('templates/footer');
         if(!$this -> login_model -> is_login()){
             redirect('/login');
+            exit();
         };
 
     }

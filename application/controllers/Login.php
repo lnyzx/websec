@@ -18,6 +18,7 @@ class Login extends CI_Controller{
     public function index(){
         if($this -> login_model -> is_login()){
             redirect('/admin');
+            exit();
         }
 
         $this -> load -> view('templates/header.php');
