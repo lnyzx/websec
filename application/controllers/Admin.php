@@ -53,8 +53,8 @@ class Admin extends CI_Controller{
             redirect('/login');
         }
         $data = $_POST;
-        $today = date("Y-m-d");
-        $data['time'] = $today;
+//        $today = date("Y-m-d");
+//        $data['time'] = $today;
         if ($data['title'] === '' && $data['url'] === ''){
             redirect('/admin');
         }
