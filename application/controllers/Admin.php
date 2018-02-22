@@ -30,9 +30,13 @@ class Admin extends CI_Controller{
     public function add_article(){
         if ($this -> session -> userdata('admin') !== 'yes'){
             redirect('/login');
+            die();
         }
         $data = $_POST;
         $today = date("Y-m-d");
+        if ($data['introduction'] == ''){
+            $data['introduction'] = $data['title'];
+        }
         $data['time'] = $today;
         if ($data['title'] === '' && $data['url'] === ''){
             redirect('/admin');
@@ -51,6 +55,7 @@ class Admin extends CI_Controller{
     public function update_article(){
         if ($this -> session -> userdata('admin') !== 'yes'){
             redirect('/login');
+            die();
         }
         $data = $_POST;
 //        $today = date("Y-m-d");

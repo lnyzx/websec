@@ -33,6 +33,7 @@ class Login extends CI_Controller{
         if($this -> login_model -> check_pass($username, $password)){
             $this -> session -> set_userdata('admin', 'yes');
             redirect('/admin');
+            die();
         }
         else{
             $this -> session -> set_userdata('admin', 'no');

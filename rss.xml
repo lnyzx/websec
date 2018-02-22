@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>tinyphp的博客</title>
+<link>http://www.cnblogs.com/tinyphp</link>
+<description>tinyphp web page</description>
+<item>
+<title>文章标题一</title>
+<link>http://www.cnblogs.com/tinyphp/archive/2013/04/19/3030233.html</link>
+<description>文章内容一</description>
+</item>
+<item>
+<title>文章标题二</title>
+<link>http://www.cnblogs.com/tinyphp/archive/2013/04/18/3029193.html</link>
+<description>文章内容二</description>
+</item>
+</channel>
+</rss>
