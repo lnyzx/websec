@@ -20,7 +20,7 @@
         <div class='form-group'>
             <label for="introduction" class="col-sm-5 control-label"></label>
             <div class="col-sm-3">
-                <textarea name="introduction" id="introduction" class="form-control" rows="7" placeholder="文章简介"></textarea>
+                <textarea name="introduction" id="introduction" class="form-control" rows="7" placeholder="文章简介, 默认为标题"></textarea>
             </div>
         </div>
     <!--文章类型-->
