@@ -14,7 +14,7 @@ class Rss extends CI_Controller{
 
     public function index(){
         header("Content-type: application/xml");
-        $query  = $this -> article_model -> all_articles_desc();
+        $query  = $this -> article_model -> all_articles_rss();
 
         echo <<<rss_start
 <?xml version="1.0" encoding="UTF-8"?>
@@ -30,6 +30,7 @@ rss_start;
             $title = htmlspecialchars($row->title);
             $desc = htmlspecialchars($row->introduction);
             $link = htmlspecialchars($row->url);
+            $time = htmlspecialchars($row->time + 'T');
             echo <<<item
     
     <item>
@@ -37,6 +38,7 @@ rss_start;
       <description>{$desc}</description>
       <link>{$link}</link>
       <guid>{$link}</guid>
+      <updated>{$time}</updated>
     </item>  
 item;
         }

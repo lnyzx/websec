@@ -35,9 +35,10 @@ class Article_model extends CI_Model{
         return $query -> result();
     }
 
-    public function all_articles_desc()
+    public function all_articles_rss()
     {
-        $query = $this -> db -> order_by('id', 'desc');
+        $this -> db -> order_by('id', 'desc');
+        $this -> db -> limit(15, 0);
         $query = $this -> db -> get('articles');
         return $query -> result();
     }
