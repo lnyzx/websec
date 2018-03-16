@@ -30,7 +30,8 @@ rss_start;
             $title = htmlspecialchars($row->title);
             $desc = htmlspecialchars($row->introduction);
             $link = htmlspecialchars($row->url);
-            $time = htmlspecialchars($row->time);
+            $time = strtotime($row->time);
+            $time = date("D, d M y H:i:s O", $time);
             echo <<<item
     
     <item>
