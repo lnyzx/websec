@@ -30,7 +30,7 @@ rss_start;
             $title = htmlspecialchars($row->title);
             $desc = htmlspecialchars($row->introduction);
             $link = htmlspecialchars($row->url);
-            $time = htmlspecialchars($row->time + 'T');
+            $time = htmlspecialchars($row->time);
             echo <<<item
     
     <item>
@@ -38,7 +38,7 @@ rss_start;
       <description>{$desc}</description>
       <link>{$link}</link>
       <guid>{$link}</guid>
-      <updated>{$time}</updated>
+      <pubDate>{$time}</pubDate>
     </item>  
 item;
         }
