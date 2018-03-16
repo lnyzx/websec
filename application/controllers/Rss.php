@@ -18,25 +18,25 @@ class Rss extends CI_Controller{
 
         echo <<<rss_start
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <title>Lnyas`s WebSec</title>  
 <link>http://182.254.247.127/websec/</link>  
 <description>Focus on Web Security</description>  
 <language>en-us</language>
+<atom:link href="http://182.254.247.127/websec/index.php?/rss" rel="self" type="application/rss+xml" />
 rss_start;
         foreach($query as $row){
             $title = htmlspecialchars($row->title);
             $desc = htmlspecialchars($row->introduction);
-            $time = htmlspecialchars($row->time);
             $link = htmlspecialchars($row->url);
             echo <<<item
     
     <item>
       <title>{$title}</title>
       <description>{$desc}</description>
-      <pubDate>{$time}</pubDate>
       <link>{$link}</link>
+      <guid>{$link}</guid>
     </item>  
 item;
         }
