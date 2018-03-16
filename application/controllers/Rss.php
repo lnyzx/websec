@@ -30,14 +30,13 @@ rss_start;
             $title = htmlspecialchars($row->title);
             $desc = htmlspecialchars($row->introduction);
             $link = htmlspecialchars($row->url);
-            $guid = htmlspecialchars($row->id);
             echo <<<item
     
     <item>
       <title>{$title}</title>
       <description>{$desc}</description>
       <link>{$link}</link>
-      <guid>{$guid}</guid>
+      <guid>{$link}</guid>
     </item>  
 item;
         }
