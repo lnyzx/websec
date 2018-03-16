@@ -23,6 +23,7 @@ class Rss extends CI_Controller{
 <link>http://182.254.247.127/websec/</link>  
 <description>Focus on Web Security</description>  
 <language>en-us</language>
+<channel>
 rss_start;
         foreach($query as $row){
             $title = htmlspecialchars($row->title);
@@ -40,7 +41,8 @@ rss_start;
 item;
         }
         echo <<<rss_end
-  <channel>  
+        
+  </channel>
 </rss>  
 rss_end;
 
