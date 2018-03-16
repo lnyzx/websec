@@ -19,11 +19,11 @@ class Rss extends CI_Controller{
         echo <<<rss_start
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
+<channel>
 <title>Lnyas`s WebSec</title>  
 <link>http://182.254.247.127/websec/</link>  
 <description>Focus on Web Security</description>  
 <language>en-us</language>
-<channel>
 rss_start;
         foreach($query as $row){
             $title = htmlspecialchars($row->title);
