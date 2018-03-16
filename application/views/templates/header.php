@@ -26,6 +26,7 @@
                 <li><a href="index.php">主页</a></li>
                 <li><a href="http://www.au1ge.xyz">博客</a></li>
                 <li><a href="index.php?/login">登录</a></li>
+                <li><a href="index.php?/rss" target="_blank">RSS</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         文章分类 <b class="caret"></b>

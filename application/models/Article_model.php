@@ -35,6 +35,13 @@ class Article_model extends CI_Model{
         return $query -> result();
     }
 
+    public function all_articles_desc()
+    {
+        $query = $this -> db -> order_by('id', 'desc');
+        $query = $this -> db -> get('articles');
+        return $query -> result();
+    }
+
     public function get_nums(){
         return $this -> db -> count_all_results('articles');
     }
