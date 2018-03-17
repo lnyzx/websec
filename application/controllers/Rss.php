@@ -13,7 +13,7 @@ class Rss extends CI_Controller{
     }
 
     public function index(){
-        header("Content-type: application/xml");
+        header("Content-type: application/rss+xml");
         $query  = $this -> article_model -> all_articles_rss();
 
         echo <<<rss_start
