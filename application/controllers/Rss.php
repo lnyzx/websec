@@ -18,6 +18,7 @@ class Rss extends CI_Controller{
         $this_time = date("Y-m-d\TH:i:sP");
 
         echo <<<rss_start
+<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Lnyas`s WebSec</title>
   <id>http://182.254.247.127/websec/index.php?/rss</id>
