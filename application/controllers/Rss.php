@@ -15,7 +15,7 @@ class Rss extends CI_Controller{
     public function index(){
         header("Content-type: application/rss+xml");
         $query  = $this -> article_model -> all_articles_rss();
-        $this_time = date("Y-m-d h:i:sa");
+        $this_time = date("Y-m-d\TH:i:sP");
 
         echo <<<rss_start
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -34,7 +34,7 @@ rss_start;
             $desc = htmlspecialchars($row->introduction);
             $link = htmlspecialchars($row->url);
             $time = strtotime($row->time);
-            $time = date("D, d M y H:i:s O", $time);
+            $time = date("Y-m-d\TH:i:sP", $time);
             echo <<<item
     
   <entry xml:base="http://182.254.247.127/websec/index.php?/rss">
