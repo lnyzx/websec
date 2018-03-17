@@ -15,41 +15,38 @@ class Rss extends CI_Controller{
     public function index(){
         header("Content-type: application/rss+xml");
         $query  = $this -> article_model -> all_articles_rss();
-        $this_time = date("Y-m-d\TH:i:sP");
 
         echo <<<rss_start
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title type="text">Lnyas`s WebSec</title>
-  <id>http://182.254.247.127/websec/index.php?/rss</id>
-  <updated>{$this_time}</updated>
-  <link href="http://182.254.247.127/websec/" />
-  <link href="http://182.254.247.127/websec/index.php?/rss" rel="self" />
-  <author>
-    <name>Unknown author</name>
-  </author>
-  <generator>Lnyas</generator>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Lnyas`s WebSec</title>  
+<link>http://182.254.247.127/websec/</link>  
+<description>Focus on Web Security</description>  
+<language>en-us</language>
+<atom:link href="http://182.254.247.127/websec/index.php?/rss" rel="self" type="application/rss+xml" />
 rss_start;
         foreach($query as $row){
             $title = htmlspecialchars($row->title);
             $desc = htmlspecialchars($row->introduction);
             $link = htmlspecialchars($row->url);
             $time = strtotime($row->time);
-            $time = date("Y-m-d\TH:i:sP", $time);
+            $time = date("D, d M y H:i:s O", $time);
             echo <<<item
     
-  <entry xml:base="http://182.254.247.127/websec/index.php?/rss">
-    <title type="text">{$title}</title>
-    <id>{$link}</id>
-    <updated>{$time}</updated>
-    <link href="{$link}" />
-    <content type="html">{$desc}</content>
-  </entry>
+    <item>
+      <title>{$title}</title>
+      <description>{$desc}</description>
+      <link>{$link}</link>
+      <guid>{$link}</guid>
+      <pubDate>{$time}</pubDate>
+    </item>  
 item;
         }
         echo <<<rss_end
         
-</feed>
+  </channel>
+</rss>  
 rss_end;
 
     }
