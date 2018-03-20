@@ -21,10 +21,10 @@ class Rss extends CI_Controller{
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <title>Lnyas`s WebSec</title>  
-<link>http://182.254.247.127/websec/</link>  
+<link>http://websec.lnyas.cc/</link>  
 <description>Focus on Web Security</description>  
 <language>en-us</language>
-<atom:link href="http://182.254.247.127/websec/index.php?/rss" rel="self" type="application/rss+xml" />
+<atom:link href="http://websec.lnyas.cc/index.php?/rss" rel="self" type="application/rss+xml" />
 rss_start;
         foreach($query as $row){
             $title = htmlspecialchars($row->title);
