@@ -28,7 +28,7 @@
             <label for="category" class="col-sm-5 control-label"></label>
             <div class="col-sm-1">
     <!--            加载文章分类-->
-                <script type="text/javascript" src="js/load_category.js"></script>
+<!--                <script type="text/javascript" src="js/load_category.js"></script>-->
                 <select name="category" id="category" class="form-control"></select>
             </div>
             <div class="col-sm-2">

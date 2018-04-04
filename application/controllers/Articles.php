@@ -11,8 +11,9 @@ class Articles extends CI_Controller {
 
     public function index()
     {
-        $this -> load -> view('templates/header');
-        $this->load->view('pages/article');
+        $row  = $this -> article_model -> all_articles();
+        $data['row'] = $row;
+        $this->load->view('pages/article', $data);
         $this -> load -> view('templates/footer');
     }
 
@@ -20,6 +21,9 @@ class Articles extends CI_Controller {
     {
         parent::__construct();
         $this -> load -> model('article_model');
+        $cate = $this -> article_model -> get_category();
+        $data['cate'] = $cate;
+        $this -> load -> view('templates/header', $data);
     }
 
     public function show_articles($page){
@@ -47,13 +51,11 @@ class Articles extends CI_Controller {
     }
 
     public function page(){
-        $this -> load -> view('templates/header');
         $this->load->view('pages/article');
         $this -> load -> view('templates/footer');
     }
 //显示页面
     public function search($key){
-        $this -> load -> view('templates/header');
         $this->load->view('pages/search');
         $this -> load -> view('templates/footer');
     }

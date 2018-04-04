@@ -14,10 +14,12 @@ class Admin extends CI_Controller{
         $this -> load -> library('session');
         $this -> load -> model('login_model');
         $this -> load -> model('article_model');
+        $cate = $this -> article_model -> get_category();
+        $data['cate'] = $cate;
+        $this -> load -> view('templates/header', $data);
     }
 
     public function index(){
-        $this -> load -> view('templates/header');
         $this -> load -> view('pages/admin');
         $this -> load -> view('templates/footer');
         if(!$this -> login_model -> is_login()){

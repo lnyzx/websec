@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/load_category4menu.js"></script>
+<!--    <script type="text/javascript" src="js/load_category4menu.js"></script>-->
 
     <script src="js/jquery.twbsPagination.min.js"></script>
     <script src="js/search_form.js"></script>
@@ -32,6 +32,9 @@
                         文章分类 <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu" id="category">
+                        <?php foreach($cate as $category): ?>
+                        <li><?php echo "<a href='index.php?/articles/search/".$category -> category."'>".$category -> category."</a>";?></li>
+                        <?php endforeach;?>
                         <li>
                     </ul>
                 </li>
