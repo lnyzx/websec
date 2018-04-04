@@ -20,11 +20,13 @@ class Admin extends CI_Controller{
     }
 
     public function index(){
-        $this -> load -> view('pages/admin');
+        $cate = $this -> article_model -> get_category();
+        $data['cate'] = $cate;
+        $this -> load -> view('pages/admin', $data);
         $this -> load -> view('templates/footer');
         if(!$this -> login_model -> is_login()){
             redirect('/login');
-            exit();
+            die();
         };
 
     }
@@ -66,12 +68,5 @@ class Admin extends CI_Controller{
             redirect('/admin');
         }
         $this -> article_model -> update_article($data);
-    }
-
-    public function show_category(){
-        $row = $this -> article_model -> get_category();
-        $this -> output
-            -> set_content_type('application/json', 'utf-8')
-            -> set_output(json_encode($row, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
     }
 }

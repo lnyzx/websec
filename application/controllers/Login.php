@@ -13,15 +13,16 @@ class Login extends CI_Controller{
         $this -> load -> model('login_model');
         $this -> load -> library('session');
         $this -> load -> helper('url');
+        $cate = $this -> article_model -> get_category();
+        $data['cate'] = $cate;
+        $this -> load -> view('templates/header', $data);
     }
 
     public function index(){
         if($this -> login_model -> is_login()){
             redirect('/admin');
-            exit();
+            die();
         }
-
-        $this -> load -> view('templates/header.php');
         $this -> load -> view('pages/login.php');
         $this -> load -> view('templates/footer.php');
     }
@@ -45,8 +46,4 @@ class Login extends CI_Controller{
         die('wrong password');
     }
 
-//    public function test_login(){
-//        $this -> session -> set_userdata('admin', 'yes');
-//        redirect('/admin');
-//    }
 }

@@ -11,9 +11,7 @@ class Articles extends CI_Controller {
 
     public function index()
     {
-        $row  = $this -> article_model -> all_articles();
-        $data['row'] = $row;
-        $this->load->view('pages/article', $data);
+        $this->load->view('pages/article');
         $this -> load -> view('templates/footer');
     }
 

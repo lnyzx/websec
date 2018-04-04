@@ -28,8 +28,11 @@
             <label for="category" class="col-sm-5 control-label"></label>
             <div class="col-sm-1">
     <!--            加载文章分类-->
-<!--                <script type="text/javascript" src="js/load_category.js"></script>-->
-                <select name="category" id="category" class="form-control"></select>
+                <select name="category" id="category" class="form-control">
+                    <?php foreach($cate as $category):?>
+                    <option><?php echo $category -> category;?></option>
+                    <?php endforeach;?>
+                </select>
             </div>
             <div class="col-sm-2">
                 <input type='text' name='new_category' class='form-control' id='new_category' placeholder="新建一个类型">
