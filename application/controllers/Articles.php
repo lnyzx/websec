@@ -11,7 +11,10 @@ class Articles extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('pages/article');
+        $num = $this -> article_model -> get_nums();
+        $page = intval($num / 15) + 1;
+        $data['page'] = $page;
+        $this->load->view('pages/article', $data);
         $this -> load -> view('templates/footer');
     }
 
@@ -39,19 +42,6 @@ class Articles extends CI_Controller {
             -> set_output(json_encode($row, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
     }
 
-    public function get_pages(){
-        $num = $this -> article_model -> get_nums();
-        $row = intval($num / 15) + 1;
-        $this -> output
-            -> set_content_type('application/json', 'utf-8')
-            -> set_output(json_encode($row, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
-
-    }
-
-    public function page(){
-        $this->load->view('pages/article');
-        $this -> load -> view('templates/footer');
-    }
 //显示页面
     public function search($key){
         $this->load->view('pages/search');
